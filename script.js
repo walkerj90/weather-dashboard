@@ -12,6 +12,7 @@ var saveSearch = function () {
     localStorage.setItem("cities", JSON.stringify(cities));
 };
 
+//search function - if you put nothing it calls an alert to enter a city
 var formSumbitHandler = function (event) {
     event.preventDefault();
     var city = cityInputEl.value.trim();
@@ -27,6 +28,8 @@ var formSumbitHandler = function (event) {
     pastSearch(city);
 }
 
+
+//calls on the api for the city the user searched
 var getCityWeather = function (city) {
     var apiKey = "844421298d794574c100e3409cee0499"
     var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
@@ -39,14 +42,14 @@ var getCityWeather = function (city) {
         });
 };
 
+
+
 var displayWeather = function (weather, searchCity) {
     //clear old content
     weatherContainerEl.textContent = "";
     citySearchInputEl.textContent = searchCity;
 
-    //console.log(weather);
-
-    //create date element
+    //create date element with moment
     var currentDate = document.createElement("span")
     currentDate.textContent = " (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
     citySearchInputEl.appendChild(currentDate);
