@@ -13,6 +13,8 @@ var saveSearch = function () {
 };
 
 //search function - if you put nothing it calls an alert to enter a city
+//on a proper city submission it gets the cityweather and the 5 day forecast
+//adds the city name to the past searches and clears the input for the next city search
 var formSumbitHandler = function (event) {
     event.preventDefault();
     var city = cityInputEl.value.trim();
@@ -29,7 +31,7 @@ var formSumbitHandler = function (event) {
 }
 
 
-//calls on the api for the city the user searched
+//calls on the api for the city the user searcheds current weather
 var getCityWeather = function (city) {
     var apiKey = "844421298d794574c100e3409cee0499"
     var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
@@ -43,7 +45,7 @@ var getCityWeather = function (city) {
 };
 
 
-
+//displays the weather from the api call above
 var displayWeather = function (weather, searchCity) {
     //clear old content
     weatherContainerEl.textContent = "";
@@ -95,11 +97,8 @@ var getUvIndex = function (lat, lon) {
         .then(function (response) {
             response.json().then(function (data) {
                 displayUvIndex(data)
-                // console.log(data)
             });
         });
-    //console.log(lat);
-    //console.log(lon);
 }
 
 var displayUvIndex = function (index) {
@@ -148,8 +147,6 @@ var display5Day = function (weather) {
 
         var forecastEl = document.createElement("div");
         forecastEl.classList = "card bg-primary text-light m-2";
-
-        //console.log(dailyForecast)
 
         //create date element
         var forecastDate = document.createElement("h5")
