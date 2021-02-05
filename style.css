@@ -1,0 +1,50 @@
+.search-column{
+    background-color:	#454a4d;
+}
+
+body {
+    background-color: #181a1b;
+}
+
+h2 {
+    color: white;
+}
+
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+}
+
+.bg-primary {
+    background-color: #2f4d6d!important;
+}
+
+.list-group-item {
+    background-color: #6b7a8a;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #6b7a8a;
+}
+
+.card-body{
+    flex:auto
+}
+
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color:white;
+}
+
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.favorable{
+    padding: 3px;
+    background-color: green;
+    color:white;
+}
