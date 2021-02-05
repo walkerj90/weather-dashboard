@@ -1,5 +1,8 @@
 # Weather-Dashboard
 
+![demonstration (1)](https://user-images.githubusercontent.com/72112742/107002405-0dade480-6740-11eb-9f8e-17f674c4b7c5.gif)
+
+
 # Project Description
 This app displays the weather of a city input by the user from the search field. The app displays the current weather as well as a five day forecast with various information regarding the weather displayed as well. Every time a search is called a button will be made below the seach so the user can click between the past cities they've searched for. 
 
