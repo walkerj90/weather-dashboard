@@ -33,7 +33,7 @@ var formSumbitHandler = function (event) {
 
 //calls on the api for the city the user searcheds current weather
 var getCityWeather = function (city) {
-    var apiKey = "844421298d794574c100e3409cee0499"
+    var apiKey = "9532b7ea51d3f4b9ea30f3b57e9e36bf"
     var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
     fetch(apiURL)
